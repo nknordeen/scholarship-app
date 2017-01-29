@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<input type='submit' value='POST' id='POST'>
+	<input type='submit' value='GET' id='GET'>
+	<input type='submit' value='UPDATE' id='UPDATE'>
+	<input type='submit' value='DELETE' id='DELETE'>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#POST').click(function(){
+				$.ajax({
+					url:'http://localhost:3000/Citibank',
+					data: {amount: 3500},
+					success: function(result){
+						console.log(result);
+					},
+					type: 'POST'})
+			});
+		});
+	</script>
+</body>
+
+</html>
